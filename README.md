@@ -1,7 +1,19 @@
 # Omoluabi-News
 
-This repository is currently a stub — no application code, site, or content has been
-committed here yet beyond repo scaffolding (`.gitattributes`).
+An accessible, static editorial reasoning platform — the first working build of
+this repository, per the "Ready for Claude Code sprint" deployment package
+delivered by Kemi (see `docs/` for the full architecture, reasoning, accessibility,
+deployment, contributing, and editing-standards docs).
+
+## Quick start
+
+```bash
+python3 -m http.server 8000
+# open http://localhost:8000/index.html
+```
+
+No build step, no framework, no server dependency — every page fetches its data
+from `_data/*.json` at runtime. See `docs/ARCHITECTURE.md`.
 
 ## What this is meant to be
 
@@ -19,12 +31,12 @@ control over how they create, publish, and sustain their work, with AI assistanc
 under clear human oversight (editorial control, accessibility, provenance, and
 consent as governing principles).
 
-Everything beyond this summary — architecture, interfaces, data model, timeline — is
-`AWAITING FRAGMENT`: not yet written here. Do not treat anything not explicitly stated
-above as confirmed for this repository specifically; the fuller Omoluabi governance
-and architecture docs live in the [Omoluabi repo](https://github.com/ukadike/omoluabi)
-(see `governance/`, `architecture/`, `cards/`, `schemas/` there) and should be
-consulted, not duplicated, until this repository has real content of its own.
+This repository now has real content of its own — see `docs/ARCHITECTURE.md`,
+`docs/REASONING.md`, `docs/ACCESSIBILITY.md`, `docs/DEPLOYMENT.md`,
+`docs/CONTRIBUTING.md`, and `docs/EDITING-GUIDELINES.md`. The fuller Omoluabi
+governance docs still live in the [Omoluabi repo](https://github.com/ukadike/omoluabi)
+(`governance/`, `architecture/`, `cards/`, `schemas/`) and remain the source of
+truth for anything not specific to this newsroom implementation.
 
 ## Related repos
 
@@ -34,6 +46,8 @@ consulted, not duplicated, until this repository has real content of its own.
 
 ## Status
 
-Needs Kemi review: confirm scope and initial structure for this repository before
-scaffolding it further (e.g. whether it should mirror the Omoluabi repo's doc
-structure, or start fresh with just the newsroom-specific application code).
+MVP built: homepage, news feed, one demo story exercising the full reasoning and
+timeline engines, GitHub Actions deploy + validation workflows. One demo story
+only (`_data/news.json`, `status: "example"`) — see `docs/EDITING-GUIDELINES.md`
+before adding real reporting. Not yet manually screen-reader tested; see
+`docs/ACCESSIBILITY.md` "Known gaps".

@@ -1,0 +1,151 @@
+<!--
+  Template for a new story. Copy this file to
+  news/<slug>/index.html, then:
+    1. Add a matching entry to _data/news.json (id, slug, title, date,
+       author, excerpt, content, evidenceIds, reasoningLayers, tags, status).
+    2. Add any new evidence to _data/evidence.json.
+    3. Replace data-news-id below with that entry's id.
+    4. Fill in the <title>, meta description, and JSON-LD headline/description.
+  This file is not linked from the site and is not itself a page.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[150-character summary]">
+  <title>[Story Title] | Omoluabi News</title>
+  <link rel="stylesheet" href="/_css/style.css">
+  <meta property="og:title" content="[Story Title]">
+  <meta property="og:description" content="[150-character summary]">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "[Story Title]",
+    "datePublished": "[YYYY-MM-DD]",
+    "dateModified": "[YYYY-MM-DD]",
+    "author": { "@type": "Organization", "name": "Omoluabi News" },
+    "publisher": { "@type": "Organization", "name": "Omoluabi News" },
+    "description": "[150-character summary]"
+  }
+  </script>
+</head>
+<body data-baseurl="">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-title"><a href="/">Omoluabi News</a></p>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news/">News</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <h1 data-news-id="[story-id]">[Story Title]</h1>
+      <p class="post-meta">
+        <time datetime="[YYYY-MM-DD]">[YYYY-MM-DD]</time>
+        &middot; <span class="author">[Author]</span>
+      </p>
+
+      <div class="post-content">
+        [Story content]
+      </div>
+
+      <section id="reasoning-layers" aria-label="Editorial reasoning">
+        <h2>Editorial Reasoning</h2>
+        <div id="reasoning-layers-list"></div>
+      </section>
+
+      <section id="evidence" aria-label="Sources and evidence">
+        <h2>Sources &amp; Evidence</h2>
+        <div id="evidence-cards"></div>
+      </section>
+
+      <section id="timeline" aria-label="Timeline">
+        <h2>Timeline</h2>
+        <div id="timeline-container"></div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>Omoluabi News is part of the Omoluabi research initiative. See the
+      <a href="https://github.com/ukadike/omoluabi">Omoluabi</a> and
+      <a href="https://github.com/ukadike/Small-Systems-Lab">Small Systems Lab</a>
+      repositories for governance and architecture.</p>
+  </footer>
+
+  <script src="/_js/reasoning-engine.js"></script>
+  <script src="/_js/timeline-engine.js"></script>
+  <script src="/_js/main.js"></script>
+  <script>
+    (async function () {
+      const storyId = document.querySelector("[data-news-id]").dataset.newsId;
+      const [newsData, evidenceData, layersData] = await Promise.all([
+        fetch("/_data/news.json").then((r) => r.json()),
+        fetch("/_data/evidence.json").then((r) => r.json()),
+        fetch("/_data/reasoning-layers.json").then((r) => r.json()),
+      ]);
+
+      const story = newsData.entries.find((e) => e.id === storyId);
+      if (!story) return;
+
+      const engine = new ReasoningEngine(story, evidenceData.sources);
+      const reasoning = engine.reason();
+
+      const layersList = document.getElementById("reasoning-layers-list");
+      layersList.innerHTML = (story.reasoningLayers || [])
+        .map((id) => layersData.layers.find((l) => l.id === id))
+        .filter(Boolean)
+        .map(
+          (layer) => `
+          <details>
+            <summary>Layer ${layer.id}: ${layer.name}</summary>
+            <div class="layer-content">
+              <p>${layer.description}</p>
+              <ul>${layer.questions.map((q) => `<li>${q}</li>`).join("")}</ul>
+            </div>
+          </details>`
+        )
+        .join("");
+
+      const evidenceCards = document.getElementById("evidence-cards");
+      evidenceCards.innerHTML = reasoning.rankedEvidence
+        .map(
+          (ev) => `
+        <div class="evidence-card">
+          <h3>Source: ${ev.title}</h3>
+          <dl>
+            <dt>Type</dt><dd>${ev.type}</dd>
+            <dt>Date</dt><dd>${ev.date}</dd>
+            <dt>Reliability</dt><dd>${ev.reliability}</dd>
+          </dl>
+          <blockquote>${ev.text}</blockquote>
+          ${
+            ev["source-url"]
+              ? `<p><a href="${ev["source-url"]}">Source link</a></p>`
+              : ""
+          }
+        </div>`
+        )
+        .join("");
+
+      const timelineEvents = reasoning.rankedEvidence.map((ev) => ({
+        date: ev.date,
+        title: ev.title,
+        description: ev.text,
+      }));
+      const timelineEngine = new TimelineEngine(timelineEvents);
+      timelineEngine.render(document.getElementById("timeline-container"));
+    })();
+  </script>
+</body>
+</html>

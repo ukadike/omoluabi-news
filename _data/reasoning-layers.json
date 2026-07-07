@@ -1,0 +1,124 @@
+{
+  "layers": [
+    {
+      "id": 1,
+      "name": "Observation",
+      "description": "What was noticed? By whom? When?",
+      "questions": [
+        "Who made the observation?",
+        "When and where was it made?",
+        "What exactly was observed, as distinct from what was inferred?"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Evidence",
+      "description": "What sources corroborate or contradict the observation?",
+      "questions": [
+        "What direct sources exist?",
+        "What do they agree on?",
+        "Where do they diverge, and by how much?"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Source Ladder",
+      "description": "Rank source reliability, firsthand account to hearsay.",
+      "questions": [
+        "Is this a firsthand account, direct testimony, secondhand account, a written record, or hearsay?",
+        "How far is the source from the original observation?",
+        "Does the ranking change the confidence of the story's claims?"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Contradiction Detection",
+      "description": "Identify and document inconsistencies between sources.",
+      "questions": [
+        "Which sources disagree, and about what specifically?",
+        "Is the disagreement about facts, timing, or interpretation?",
+        "Has the contradiction been disclosed rather than resolved by omission?"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Narrative Probability",
+      "description": "Which narrative is most consistent with the evidence?",
+      "questions": [
+        "What narrative requires the fewest unsupported assumptions?",
+        "What narrative does the strongest evidence support?",
+        "What would change if a piece of evidence were later retracted?"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Historical Erasure Detection",
+      "description": "What histories or voices are being omitted?",
+      "questions": [
+        "Whose account is missing from this story?",
+        "Why might that account be missing — access, harm, or oversight?",
+        "What would change in the story if that voice were included?"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Timeline Integrity",
+      "description": "Do all accounts align chronologically?",
+      "questions": [
+        "Do the dated events in this story occur in a consistent order?",
+        "Are there gaps in the timeline that matter to the story?",
+        "Does any account's internal timeline contradict another's?"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Returnability Index",
+      "description": "Can the observer return to revisit or revise the account?",
+      "questions": [
+        "Has the observer consented to this account being published as-is?",
+        "Can the observer revise or withdraw the account later?",
+        "Is there a record of when it was last revised, and by whom?"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Risk Assessment",
+      "description": "What are the stakes of this observation, for whom?",
+      "questions": [
+        "Who is exposed to risk if this is published?",
+        "Who is exposed to risk if this is withheld?",
+        "What safeguards reduce risk without withholding the story?"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Local Testimony",
+      "description": "Who has lived experience relevant to this story?",
+      "questions": [
+        "Who was present, and have they been asked to contribute?",
+        "Does the story rely on distant or secondhand framing where local testimony was available?",
+        "Is local testimony weighted appropriately against outside analysis?"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Map Intelligence",
+      "description": "What does geography reveal about this story?",
+      "questions": [
+        "Does location change how the story should be read?",
+        "Are places named specifically enough to be verifiable?",
+        "Does the geography help explain access, distance, or delay in reporting?"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Temporal Justice",
+      "description": "Whose timeline matters? Whose is erased?",
+      "questions": [
+        "Whose sense of urgency is centered in this story?",
+        "Whose account has been delayed, dismissed, or deprioritized?",
+        "Does the published timeline match the timeline as those affected experienced it?"
+      ]
+    }
+  ]
+}

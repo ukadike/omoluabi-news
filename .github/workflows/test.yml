@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: HTML validation
+        run: |
+          npx --yes html-validate 'index.html' 'news/index.html' 'news/**/index.html'
+
+      - name: CSS validation
+        run: |
+          npx --yes -p stylelint -p stylelint-config-standard \
+            stylelint --config .stylelintrc.json '_css/**/*.css'
+
+      - name: JSON validation
+        run: |
+          for f in _data/*.json; do
+            echo "Checking $f"
+            python3 -m json.tool "$f" > /dev/null
+          done

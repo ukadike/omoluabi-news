@@ -1,0 +1,406 @@
+/* ==========================================================================
+   Omoluabi News — Locked Visual System
+   Paper / Ink / Line only. No gradients, no shadows, no border-radius.
+   Text contrast target: 7:1 (WCAG AAA). UI component target: 4.5:1.
+   ========================================================================== */
+
+:root {
+  --paper: #efece2;
+  --ink: #1a1a1a;
+  --line: #d0cdc6;
+  --muted: #55524b; /* darker than a mid-gray to hold 4.5:1+ on paper */
+  --font-heading: "Helvetica Neue", helvetica, arial, sans-serif;
+  --font-body: georgia, "Times New Roman", serif;
+  --font-code: "Courier Prime", "Courier New", monospace;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  font-size: 1.0625rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+p, ul, ol, dl, table, blockquote {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+}
+
+code, pre {
+  font-family: var(--font-code);
+}
+
+pre {
+  padding: var(--space-2);
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* Only ever hide the default outline once focus-visible is guaranteed
+   to draw its own — otherwise keyboard users lose focus entirely in
+   browsers that don't support :focus-visible. */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+summary:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ==========================================================================
+   Skip link
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-1) var(--space-2);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.skip-link:focus {
+  left: var(--space-2);
+  top: var(--space-2);
+}
+
+/* ==========================================================================
+   Layout / landmarks
+   ========================================================================== */
+
+.site-header {
+  border-bottom: 2px solid var(--ink);
+  padding: var(--space-2) var(--space-3);
+}
+
+.site-header__inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.site-title a {
+  text-decoration: none;
+}
+
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-3) var(--space-4);
+}
+
+.site-footer {
+  border-top: 2px solid var(--ink);
+  padding: var(--space-3);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.site-footer__inner {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+button,
+.button {
+  display: inline-block;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover,
+.button:hover {
+  background: var(--ink);
+  color: var(--paper);
+  opacity: 1;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 48rem) {
+  .news-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card,
+.news-card {
+  background: var(--paper);
+  border-top: 3px solid var(--ink);
+  padding: var(--space-3);
+}
+
+.news-card h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.news-card time {
+  display: block;
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-bottom: var(--space-1);
+}
+
+.tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  padding: 0;
+  margin: var(--space-1) 0;
+}
+
+.tag-list li {
+  border: 1px solid var(--line);
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8125rem;
+  font-family: var(--font-code);
+}
+
+.example-notice {
+  border: 1px solid var(--ink);
+  padding: var(--space-2);
+  margin-bottom: var(--space-3);
+  font-size: 0.9375rem;
+}
+
+/* Reasoning layers */
+
+#reasoning-layers details {
+  border-bottom: 1px solid var(--line);
+  padding: var(--space-1) 0;
+}
+
+#reasoning-layers summary {
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: var(--space-1) 0;
+}
+
+.layer-content {
+  padding: var(--space-1) 0 var(--space-2) var(--space-2);
+}
+
+.layer-content ul {
+  padding-left: var(--space-3);
+}
+
+/* Evidence cards */
+
+.evidence-card {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--ink);
+  padding: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.evidence-card dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem var(--space-2);
+  margin: var(--space-1) 0;
+}
+
+.evidence-card dt {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.evidence-card blockquote {
+  border-left: 3px solid var(--line);
+  padding-left: var(--space-2);
+  margin-left: 0;
+  font-style: italic;
+}
+
+.contradiction-notice {
+  border: 1px solid var(--ink);
+  padding: var(--space-1) var(--space-2);
+  margin-top: var(--space-1);
+  font-size: 0.875rem;
+}
+
+/* Timeline */
+
+#timeline-container {
+  border-left: 2px solid var(--ink);
+  padding-left: var(--space-3);
+  margin-left: var(--space-1);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-3);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: calc(-1 * (var(--space-3) + 6px));
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+}
+
+.timeline-item time {
+  display: block;
+  font-family: var(--font-code);
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* Accessible tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+caption {
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  border-bottom: 2px solid var(--ink);
+}
+
+/* ==========================================================================
+   Blind editor mode — hide decorative content, keep text/structure
+   ========================================================================== */
+
+.blind-editor-mode img,
+.blind-editor-mode .decorative {
+  display: none;
+}
+
+.blind-editor-mode * {
+  background: var(--paper) !important;
+  border-color: var(--ink) !important;
+}
+
+/* ==========================================================================
+   Preferences
+   ========================================================================== */
+
+@media (prefers-contrast: more) {
+  :root {
+    --line: var(--ink);
+    --muted: var(--ink);
+  }
+
+  a, button, .button {
+    text-decoration-thickness: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   Print
+   ========================================================================== */
+
+@media print {
+  .site-header, .site-footer, .skip-link {
+    display: none;
+  }
+}

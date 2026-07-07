@@ -1,0 +1,15 @@
+title: Omoluabi News
+description: >-
+  An editorial reasoning platform built on sovereignty over observation —
+  the person who noticed something controls how it is held, when it moves,
+  what form it takes, and who benefits.
+url: "https://ukadike.github.io"
+baseurl: "/omoluabi-news"
+lang: en
+
+# This site is deployed as static files via GitHub Actions
+# (.github/workflows/deploy.yml, actions/upload-pages-artifact).
+# Jekyll is NOT run as a build step: Jekyll excludes underscore-prefixed
+# directories (_data, _includes, _layouts) from its output by default,
+# which would break every client-side fetch('/_data/*.json') call this
+# site depends on. This file exists for repo/editor metadata only.

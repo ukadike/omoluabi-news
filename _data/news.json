@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "id": "news-001",
+      "slug": "how-this-newsroom-holds-evidence",
+      "title": "How This Newsroom Holds Evidence Instead of Headlines",
+      "subtitle": "A worked example of the reasoning engine, using this repository's own build as the case study",
+      "date": "2026-07-07",
+      "author": "Omoluabi News — Editorial",
+      "excerpt": "This is a demonstration story, not a field report. It walks the twelve reasoning layers through the record of how this site itself was built.",
+      "content": "<p>This story is an example, not a report on a real-world event. It exists so a reader can see the reasoning engine work on something fully verifiable: the history of this repository.</p><p>On 2 July 2026, a repository restoration pass audited this repository and found it effectively empty — the only tracked file was <code>.gitattributes</code>. That audit is <a href=\"https://github.com/ukadike/omoluabi-news/blob/main/docs/REPO_AUDIT.md\">still in the repository</a>. On 7 July 2026, this pass added the visual system, the reasoning and timeline engines, the data schema, this story, and the GitHub Actions deployment workflow described below.</p><p>Every claim above can be checked against the repository's own commit history and audit file — nothing here is asserted without a source a reader can open themselves.</p>",
+      "evidenceIds": ["ev-001", "ev-002", "ev-003"],
+      "reasoningLayers": [1, 2, 3, 7, 8],
+      "tags": ["example", "meta", "reasoning-engine"],
+      "status": "example"
+    }
+  ]
+}

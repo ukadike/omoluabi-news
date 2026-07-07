@@ -1,0 +1,41 @@
+{
+  "sources": [
+    {
+      "id": "ev-001",
+      "type": "written-record",
+      "title": "Repository audit, 2 July 2026",
+      "date": "2026-07-02",
+      "author": "Repository restoration pass",
+      "reliability": "direct-observation",
+      "text": "Effectively empty. Before this pass, the only tracked file was .gitattributes.",
+      "source-url": "https://github.com/ukadike/omoluabi-news/blob/main/docs/REPO_AUDIT.md",
+      "contradicts": [],
+      "supports": ["news-001"]
+    },
+    {
+      "id": "ev-002",
+      "type": "written-record",
+      "title": "Initial commit",
+      "date": "2025-12-08",
+      "author": "git history",
+      "reliability": "direct-observation",
+      "text": "The repository's first commit created the scaffold this build later extended; no application code existed until this pass.",
+      "source-url": "https://github.com/ukadike/omoluabi-news/commit/12156ed",
+      "contradicts": [],
+      "supports": ["news-001"]
+    },
+    {
+      "id": "ev-003",
+      "type": "written-record",
+      "title": "MVP build, 7 July 2026",
+      "date": "2026-07-07",
+      "author": "Claude Code, on Kemi's request",
+      "reliability": "direct-observation",
+      "text": "This pass added the locked visual system, the reasoning and timeline engines, the data schema, this story, and the GitHub Actions deployment workflow.",
+      "source-url": "https://github.com/ukadike/omoluabi-news",
+      "contradicts": [],
+      "supports": ["news-001"]
+    }
+  ],
+  "contradictions": []
+}

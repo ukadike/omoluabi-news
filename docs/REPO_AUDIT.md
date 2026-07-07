@@ -41,3 +41,14 @@ audit explicitly avoids.
   repo's own description of this project) instead of leaving the repo blank or
   inventing content.
 - Added this audit file.
+
+## Follow-up pass, 2026-07-07
+
+Scope question above is resolved: this repo now hosts its own application code
+(not a thin pointer into the `omoluabi` repo's scaffolding). MVP built per the
+uploaded deployment package — homepage, news feed, one demo story, reasoning and
+timeline engines, `_data/*.json`, GitHub Actions deploy + validation. Deviations
+from the package (no Jekyll build, no empty top-level dirs mirroring the
+architecture diagram, one honestly-sourced demo story instead of two fabricated
+ones) are recorded in `docs/ARCHITECTURE.md`'s "Deviations" section rather than
+here, so they stay next to the code they affect.
