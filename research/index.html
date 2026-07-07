@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research tools demo: evidence confidence chart and evidence map, sample data only.">
+  <title>Research &amp; Evidence Map | Omoluabi News</title>
+  <link rel="stylesheet" href="/_css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "leaflet": "https://esm.sh/leaflet@1.9.4",
+      "d3-geo": "https://esm.sh/d3-geo@3.1.1"
+    }
+  }
+  </script>
+</head>
+<body data-baseurl="">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-title"><a href="/">Omoluabi News</a></p>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news/">News</a></li>
+          <li><a href="/research/" aria-current="page">Research</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <p class="example-notice">This page demonstrates the research/evidence
+      tooling added to the site — an evidence confidence chart and an
+      evidence map. Every record on this page is sample data
+      (<code>data/sample/</code>), not real evidence. See
+      <a href="https://github.com/ukadike/omoluabi-news/blob/main/docs/RESEARCH_ARCHITECTURE.md">docs/RESEARCH_ARCHITECTURE.md</a>
+      for how real evidence would move through this pipeline, and
+      <a href="https://github.com/ukadike/omoluabi-news/blob/main/docs/ETHICAL_SCRAPING_POLICY.md">docs/ETHICAL_SCRAPING_POLICY.md</a>
+      for the rules on collecting it.</p>
+
+    <h1>Research &amp; Evidence Map</h1>
+
+    <section>
+      <div id="confidence-chart"></div>
+    </section>
+
+    <section aria-labelledby="map-heading">
+      <h2 id="map-heading">Evidence Map</h2>
+      <p id="distortion-note" class="distortion-note"></p>
+      <section id="evidence-map" class="evidence-map" aria-label="Evidence map"></section>
+      <div id="map-table"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Omoluabi News is part of the Omoluabi research initiative. See the
+      <a href="https://github.com/ukadike/omoluabi">Omoluabi</a> and
+      <a href="https://github.com/ukadike/Small-Systems-Lab">Small Systems Lab</a>
+      repositories for governance and architecture.</p>
+  </footer>
+
+  <script type="module">
+    // charts.js and distortion.js have no CDN dependency, so they always
+    // load. map.js imports Leaflet from a CDN via the import map above —
+    // it's imported dynamically, inside a try/catch, below, so a blocked
+    // or slow CDN degrades to "no interactive map" instead of breaking
+    // the whole page (the table fallback needs no CDN either way).
+    import { renderEvidenceConfidence, renderFeatureTable } from "/src/visualizations/charts.js";
+    import { distortionWarning } from "/src/maps/distortion.js";
+
+    async function init() {
+      const evidenceSample = await fetch("/data/sample/evidence_sample.json").then((r) => r.json());
+      renderEvidenceConfidence(document.getElementById("confidence-chart"), [evidenceSample]);
+
+      const geojson = await fetch("/data/sample/map_layer_sample.geojson").then((r) => r.json());
+
+      const layerConfig = {
+        id: "sample-layer",
+        title: "Sample evidence locations",
+        projection: "mercator",
+        accessibility_summary: "One sample point near Lagos. Table fallback below the map.",
+      };
+      const distortion = distortionWarning(layerConfig);
+      document.getElementById("distortion-note").textContent =
+        `Distortion note (${distortion.projection} projection): ${distortion.warning} ${distortion.accessibilitySummary}`;
+
+      // Table fallback always renders, whether or not the interactive map does.
+      renderFeatureTable(document.getElementById("map-table"), geojson);
+
+      try {
+        const { initEvidenceMap } = await import("/src/maps/map.js");
+        initEvidenceMap("evidence-map", geojson);
+      } catch (err) {
+        console.warn("Interactive map unavailable, table fallback above still applies:", err);
+        document.getElementById("evidence-map").textContent =
+          "Interactive map unavailable right now — see the table below for the same data.";
+      }
+    }
+
+    init().catch((err) => console.error("Research page failed to load:", err));
+  </script>
+</body>
+</html>

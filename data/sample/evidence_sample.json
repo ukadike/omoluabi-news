@@ -1,0 +1,17 @@
+{
+  "id": "sample-001",
+  "title": "Sample evidence item",
+  "source_url": "https://example.com/source",
+  "source_type": "primary_document",
+  "publisher": "Example Publisher",
+  "author": "",
+  "published_at": "2026-07-07",
+  "accessed_at": "2026-07-07T12:00:00Z",
+  "summary": "A sample evidence item for testing the Omoluabi research pipeline. Not a real source.",
+  "claims": ["This is a sample claim, not a real one."],
+  "locations": ["Lagos"],
+  "tags": ["sample", "research"],
+  "confidence": 0.6,
+  "review_status": "needs_review",
+  "notes": "Sample only. Replace with reviewed material before this appears anywhere as real evidence."
+}

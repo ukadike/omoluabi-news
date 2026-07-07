@@ -1,0 +1,16 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [3.3792, 6.5244]
+      },
+      "properties": {
+        "title": "Lagos sample point",
+        "summary": "Sample mapped location — not a real evidence record."
+      }
+    }
+  ]
+}

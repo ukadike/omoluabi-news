@@ -119,6 +119,66 @@
         "Whose account has been delayed, dismissed, or deprioritized?",
         "Does the published timeline match the timeline as those affected experienced it?"
       ]
+    },
+    {
+      "id": 13,
+      "name": "Dangerous Words",
+      "description": "Does the language in this story put anyone at risk if published as written?",
+      "questions": [
+        "Does the account name, locate, or otherwise identify someone who could be harmed by that identification?",
+        "Does phrasing imply something unconfirmed in a way that could cause real-world harm if wrong?",
+        "Would rewording reduce risk without removing the substance of the claim?"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Ceasefire Distortion",
+      "description": "Is a ceasefire, truce, or de-escalation being reported with the same scrutiny applied to all sides?",
+      "questions": [
+        "Are violations attributed with the same evidentiary standard regardless of which side is accused?",
+        "Is the ceasefire's actual scope — what it covers, what it excludes — stated plainly, or implied to be broader than it is?",
+        "Does the story distinguish a pause in hostilities from a resolution of the underlying dispute?"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Survival Systems",
+      "description": "What survival infrastructure does this story touch, and what is its state?",
+      "questions": [
+        "Does the story address water, food, shelter, medical care, or power access relevant to the people involved?",
+        "Is the state of that infrastructure confirmed directly, or assumed from indirect signals?",
+        "Would a reader who depends on this infrastructure learn what they need to know from this story?"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Education Continuity",
+      "description": "Is anyone's access to education disrupted by what this story describes, and for how long?",
+      "questions": [
+        "Are schools, students, or educators affected by the events in this story?",
+        "Is the disruption temporary, or does the story show signs it could be prolonged?",
+        "Whose account of the disruption is represented — administrators, teachers, students, or only outside observers?"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Legal / Ethical Caution",
+      "description": "Are there legal or ethical constraints on how this can be published?",
+      "questions": [
+        "Could publishing this identify a minor, a victim, or a confidential source without consent?",
+        "Is this subject to an ongoing legal process that constrains what can be characterized as fact?",
+        "Has this been reviewed against the newsroom's own editorial and legal standards before publication?"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Unrecoverable Loss Register",
+      "description": "Does this story involve a loss that cannot be undone or recovered, and is that loss recorded even if unresolved?",
+      "questions": [
+        "What, specifically, was lost — a life, a record, a structure, a piece of testimony — and is it named rather than abstracted?",
+        "If the loss can't be reversed, is it still logged clearly enough that it isn't erased from the historical record?",
+        "Does the story distinguish what is permanently lost from what is merely delayed or damaged?"
+      ]
     }
   ]
 }

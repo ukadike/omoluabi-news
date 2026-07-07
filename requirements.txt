@@ -1,0 +1,7 @@
+# Python deps for tools/*.py. Trimmed from the original research-tools
+# package to what these three scripts actually import — pandas,
+# python-dateutil, jsonschema, trafilatura, newspaper3k, geopandas, shapely,
+# and pyproj were listed there but are unused by any script in this repo.
+beautifulsoup4
+requests
+feedparser

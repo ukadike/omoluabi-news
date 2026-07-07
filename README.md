@@ -51,3 +51,10 @@ timeline engines, GitHub Actions deploy + validation workflows. One demo story
 only (`_data/news.json`, `status: "example"`) — see `docs/EDITING-GUIDELINES.md`
 before adding real reporting. Not yet manually screen-reader tested; see
 `docs/ACCESSIBILITY.md` "Known gaps".
+
+Research tools added: an 18-layer reasoning model (12 original + 6 new),
+a `/research/` page (evidence map + confidence chart, sample data only),
+and dormant scraper/RSS/entity-extraction tools gated behind a source
+registry that currently holds only placeholder entries — see
+`docs/RESEARCH_ARCHITECTURE.md` and `docs/ETHICAL_SCRAPING_POLICY.md`
+before pointing any of it at a real source.

@@ -1,0 +1,12 @@
+{
+  "feeds": [
+    {
+      "id": "sample-feed",
+      "name": "Sample RSS Feed",
+      "url": "https://example.com/rss",
+      "source_type": "reputable_reporting",
+      "limit": 10,
+      "tags": ["sample"]
+    }
+  ]
+}

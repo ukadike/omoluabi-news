@@ -1,0 +1,34 @@
+{
+  "references": [
+    {
+      "name": "W3C WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "use": "Accessibility baseline"
+    },
+    {
+      "name": "W3C WAI WCAG Overview",
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "use": "WCAG version overview"
+    },
+    {
+      "name": "W3C WAI",
+      "url": "https://www.w3.org/WAI/",
+      "use": "Accessibility standards and support materials"
+    },
+    {
+      "name": "Deque axe-core",
+      "url": "https://github.com/dequelabs/axe-core",
+      "use": "Automated accessibility testing"
+    },
+    {
+      "name": "Leaflet",
+      "url": "https://leafletjs.com/",
+      "use": "Interactive web maps"
+    },
+    {
+      "name": "Leaflet API Reference",
+      "url": "https://leafletjs.com/reference.html",
+      "use": "Map implementation reference"
+    }
+  ]
+}

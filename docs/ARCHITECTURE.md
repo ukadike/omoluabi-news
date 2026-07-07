@@ -60,6 +60,57 @@ does differently, on purpose:
    `_data/news.json` and says so on the page itself. See
    `docs/EDITING-GUIDELINES.md`.
 
+## Research tools expansion
+
+A second deployment package ("Research Tools + Mapping Master Package")
+added research ingestion, mapping, and visualization on top of the MVP.
+What it added, where it lives, and how it deviates:
+
+```
+omoluabi-news/
+├── research/index.html         (new page: evidence map + confidence chart, sample data only)
+├── schemas/                    (evidence, source, map_layer JSON Schemas)
+├── sources/                    (source_registry.json, rss_feeds.json — placeholder entries only; references.json — real)
+├── data/
+│   ├── sample/                 (clearly-marked sample evidence + geojson)
+│   ├── raw/                    (gitignored — tools/research_scraper.py output)
+│   └── processed/              (gitignored — tools/*.py output, all "needs_review")
+├── src/
+│   ├── maps/map.js, distortion.js       (Leaflet + d3-geo, via import map — see below)
+│   └── visualizations/charts.js         (accessible chart + table components)
+├── tools/
+│   ├── research_scraper.py     (ethical static-page scraper, registry-gated)
+│   ├── rss_ingester.py         (RSS ingestion)
+│   ├── entity_keyword_extractor.py
+│   └── validate-schemas.js     (ajv, checks schemas/ compiles)
+├── requirements.txt             (trimmed to what tools/*.py actually import)
+└── package.json                  (ajv only — see below)
+```
+
+Deviations from that package, beyond the same "no empty scaffolding"
+principle already applied to the MVP:
+
+- **No npm-bundled frontend libraries.** The package's `package.json`
+  listed `leaflet`, `d3`, `d3-geo`, and `@turf/turf` as dependencies, which
+  implies a bundler — this site still has none. `research/index.html`
+  instead uses a browser `<script type="importmap">` pointing `"leaflet"`
+  and `"d3-geo"` at CDN ESM builds (`esm.sh`), so `src/maps/*.js` can keep
+  the package's own `import L from "leaflet"` source lines unmodified and
+  still run with no build step. `package.json` here only lists `ajv`,
+  which `tools/validate-schemas.js` actually requires at a Node runtime.
+- **No separate `qa.yml` workflow.** The package's QA workflow duplicated
+  `test.yml`'s job (checkout, setup-node, setup-python, install, validate).
+  Its two new checks — `ajv` schema validation and a Python compile check
+  — were added as steps inside the existing `test.yml` instead of a second
+  workflow that would run the same triggers a second time.
+- **`robots.txt` is not parsed automatically.** `research_scraper.py`
+  reads a source's recorded `robots_policy` as a human note; it does not
+  fetch or parse the file itself. Don't read the code as enforcing
+  something it doesn't — see `docs/ETHICAL_SCRAPING_POLICY.md`.
+- **`sources/source_registry.json` and `sources/rss_feeds.json` ship with
+  only `example.com` placeholders.** Nothing in this repo scrapes or
+  ingests anything real yet; that's a separate, later decision.
+
 ## Data flow
 
 1. A page loads and fetches the JSON it needs from `_data/`.

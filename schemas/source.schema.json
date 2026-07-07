@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Omoluabi Source Registry Item",
+  "type": "object",
+  "required": ["id", "name", "url", "source_kind", "allowed_methods"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "url": { "type": "string" },
+    "source_kind": { "type": "string" },
+    "allowed_methods": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["rss", "api", "csv", "json", "html_scrape", "manual"]
+      }
+    },
+    "robots_policy": { "type": "string" },
+    "rate_limit_seconds": { "type": "number" },
+    "notes": { "type": "string" }
+  }
+}

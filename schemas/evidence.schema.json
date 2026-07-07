@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Omoluabi Evidence Card",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "source_url",
+    "source_type",
+    "accessed_at",
+    "summary",
+    "confidence",
+    "review_status"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "source_url": { "type": "string" },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "primary_document",
+        "official_statement",
+        "direct_observation",
+        "local_testimony",
+        "expert_analysis",
+        "reputable_reporting",
+        "secondary_reference",
+        "unverified_claim"
+      ]
+    },
+    "publisher": { "type": "string" },
+    "author": { "type": "string" },
+    "published_at": { "type": "string" },
+    "accessed_at": { "type": "string" },
+    "summary": { "type": "string" },
+    "claims": { "type": "array", "items": { "type": "string" } },
+    "locations": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "review_status": {
+      "type": "string",
+      "enum": ["raw", "needs_review", "approved", "rejected", "archived"]
+    },
+    "notes": { "type": "string" }
+  }
+}

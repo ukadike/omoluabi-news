@@ -35,6 +35,22 @@ ink `#1a1a1a`, line `#d0cdc6`, no gradients, no shadows, no border-radius.
 - **Alt text** — no images ship in this build yet (the one demo story is
   text-only); when an image is added, `alt` is required by review before
   merge (see `docs/CONTRIBUTING.md`).
+- **Map + chart fallbacks** — `research/index.html`'s evidence map always
+  renders with a plain-text distortion note above it and a full data table
+  below it (`src/visualizations/charts.js`'s `renderFeatureTable`); the
+  confidence chart is a length-encoded bar with an `aria-label` carrying
+  the number, plus its own data table. See `docs/MAPS_AND_DISTORTION.md`
+  and `docs/DATA_VISUALIZATION.md`.
+
+## Omoluabi extensions not yet built
+
+The research-tools package also asked for a transcript-first research
+mode, a low-bandwidth mode, and a print archive mode. None are built —
+there's no audio/video or bandwidth-heavy content yet for the first two to
+apply to, and a print stylesheet without real long-form printable content
+to test against would be guesswork. Blind editor mode (above) was built
+because it has something concrete to hide today (the example-story
+notice's decorative framing).
 
 ## What's checked in CI
 

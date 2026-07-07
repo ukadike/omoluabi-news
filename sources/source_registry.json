@@ -1,0 +1,14 @@
+{
+  "sources": [
+    {
+      "id": "sample-public-page",
+      "name": "Sample Public Page",
+      "url": "https://example.com/",
+      "source_kind": "public_webpage",
+      "allowed_methods": ["html_scrape", "manual"],
+      "robots_policy": "Check before production use.",
+      "rate_limit_seconds": 5,
+      "notes": "Placeholder. Replace with approved Omoluabi source registry entries before running tools/research_scraper.py against anything real — see docs/ETHICAL_SCRAPING_POLICY.md."
+    }
+  ]
+}

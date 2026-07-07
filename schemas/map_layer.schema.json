@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Omoluabi Map Layer",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "geojson_path",
+    "distortion_note",
+    "accessibility_summary"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "geojson_path": { "type": "string" },
+    "projection": { "type": "string" },
+    "distortion_note": { "type": "string" },
+    "accessibility_summary": { "type": "string" },
+    "source": { "type": "string" }
+  }
+}
