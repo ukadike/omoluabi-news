@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omoluabi News — Editorial Engine</title>
+  <meta name="description" content="Omoluabi News editorial engine: human review interface and manual observation entry over the Omoluabi governance pipeline — observation, source, consent, risk, accessibility, AI assist, human review, publication status." />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body data-baseurl="..">
+  <a class="skip-link" href="#app">Skip to main content</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <p class="text-small" style="margin: 0 0 var(--space-xs) 0;">Omoluabi News</p>
+      <h1 class="text-h1" style="margin: 0;">Editorial Engine</h1>
+      <p class="text-body" style="margin: var(--space-sm) 0 0 0;">
+        The newsroom's back office: a human review interface over the
+        governance pipeline, and a way to create an observation by hand —
+        no field device required. AI assists; it does not decide
+        publication status.
+      </p>
+    </div>
+    <nav class="primary-nav" role="navigation" aria-label="Primary" style="margin-top: var(--space-md);">
+      <ul>
+        <li><a href="#/">Inbox</a></li>
+        <li><a href="#/new">New observation</a></li>
+        <li><a href="#/news">News preview</a></li>
+        <li><a href="#/archive">Archive &amp; search</a></li>
+        <li><a href="../index.html">Public site</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="app" tabindex="-1" aria-live="polite"></main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p class="text-small">
+      Prototype build, local-only. Data lives in this browser's IndexedDB — nothing
+      is sent to a server. Storage layer is a prototype decision, not a settled
+      architecture; see the Omoluabi repo's <code>web-engine/local-first-plan.md</code>.
+    </p>
+    <p class="text-small">
+      <a data-blind-editor-toggle href="#" aria-pressed="false">Toggle blind editor mode</a>
+    </p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

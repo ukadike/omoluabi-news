@@ -15,6 +15,9 @@ python3 -m http.server 8000
 No build step, no framework, no server dependency — every page fetches its data
 from `_data/*.json` at runtime. See `docs/ARCHITECTURE.md`.
 
+The editorial engine (the newsroom's back office) is at
+`http://localhost:8000/engine/` — see "Editorial Engine" below.
+
 ## What this is meant to be
 
 Per the [Omoluabi repository](https://github.com/ukadike/omoluabi)'s README, which
@@ -37,6 +40,36 @@ This repository now has real content of its own — see `docs/ARCHITECTURE.md`,
 governance docs still live in the [Omoluabi repo](https://github.com/ukadike/omoluabi)
 (`governance/`, `architecture/`, `cards/`, `schemas/`) and remain the source of
 truth for anything not specific to this newsroom implementation.
+
+## Editorial Engine (`engine/`)
+
+The web engine — Omoluabi's governed review and authoring interface — lives in
+this repository, per Kemi's direction (2026-07-08) that Omoluabi-News is where
+the web engine lives. It was moved here from the Omoluabi repo's
+`web-engine/app/` (which now points back here); the planning documentation it
+implements (`web-engine/*.md`, `architecture/governance-pipeline.md`) remains
+in the [Omoluabi repo](https://github.com/ukadike/omoluabi) as the source of
+truth.
+
+What it does:
+
+- **New observation** (`engine/#/new`) — create a story by hand, no field
+  device required (`source.origin_type: "web-form"`). **Every story needs a
+  headline**: the form requires a `title`, stored on the observation record.
+- **Review pipeline** — Source → Consent → Risk → Accessibility → AI assist →
+  Human review → Publication status, gated in order; no screen may skip ahead.
+- **News preview** (`engine/#/news`) — reader view of records with an explicit
+  human `public` publication decision only.
+- **Archive & search** — JSON export for non-private decided records.
+
+Engine data lives in the browser's IndexedDB (prototype decision — see the
+Omoluabi repo's `web-engine/local-first-plan.md`); the public site's stories
+live in `_data/news.json`. Bridging the two (exporting a published engine
+record as a `news.json` entry) is a planned follow-up, not yet built — today
+an editor copies the story across by hand.
+
+`engine/css/variables.css` is a verbatim copy of the shared Small Systems Lab
+visual-token system (locked; do not redesign from this repo).
 
 ## Related repos
 

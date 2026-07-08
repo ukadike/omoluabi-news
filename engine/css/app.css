@@ -1,0 +1,291 @@
+/* Web Engine app styles. Extends variables.css — no new colors, no
+   gradients, no shadows, no border-radius. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: var(--line-body);
+}
+
+.header__inner,
+.site-footer,
+main#app {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.header {
+  padding-top: var(--space-lg);
+}
+
+main#app {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-2xl);
+}
+
+main#app:focus {
+  outline: none;
+}
+
+.site-footer {
+  border-top: var(--border-thick);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-lg);
+  padding: 0;
+  margin: 0;
+}
+
+.primary-nav a {
+  color: var(--color-ink);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.skip-link:focus {
+  left: var(--space-md);
+  top: var(--space-md);
+}
+
+a {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Pipeline stepper — status is never color-only: every state has a text
+   label and a distinct symbol.
+   ========================================================================== */
+
+.stepper {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  margin: var(--space-lg) 0;
+  border-top: var(--border-thin);
+  border-bottom: var(--border-thin);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.stepper li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.stepper a,
+.stepper span.locked {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-wide);
+}
+
+.stepper span.locked {
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.step-status {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.step-status[data-state="complete"]::before {
+  content: "[done] ";
+}
+
+.step-status[data-state="current"]::before {
+  content: "[review] ";
+}
+
+.step-status[data-state="locked"]::before {
+  content: "[locked] ";
+}
+
+/* ==========================================================================
+   Cards, forms
+   ========================================================================== */
+
+.review-card {
+  background: var(--color-white);
+  border: var(--border-thin);
+  border-top: var(--border-thick);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.field-list {
+  display: grid;
+  grid-template-columns: minmax(10rem, auto) 1fr;
+  gap: var(--space-sm) var(--space-lg);
+  margin: var(--space-md) 0;
+}
+
+.field-list dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-small);
+}
+
+.field-list dd {
+  margin: 0;
+}
+
+form.review-form {
+  margin-top: var(--space-lg);
+}
+
+form.review-form .form-row {
+  margin-bottom: var(--space-md);
+}
+
+form.review-form label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+form.review-form input[type="text"],
+form.review-form textarea,
+form.review-form select {
+  width: 100%;
+  max-width: 32rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: var(--border-thin);
+  background: var(--color-soft);
+  color: var(--color-ink);
+}
+
+form.review-form textarea {
+  min-height: 5rem;
+}
+
+.help-text {
+  font-size: var(--text-small);
+  color: var(--color-muted);
+  margin-top: var(--space-xs);
+}
+
+.inline-note {
+  border: var(--border-thin);
+  border-left: var(--border-thick);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-md) 0;
+  font-size: var(--text-small);
+}
+
+.ai-suggestion {
+  border: var(--border-thick);
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.ai-suggestion .text-small {
+  margin-top: 0;
+}
+
+.news-grid,
+.inbox-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.inbox-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.button-row {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+table.archive-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-lg);
+}
+
+table.archive-table caption {
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+table.archive-table th,
+table.archive-table td {
+  border: var(--border-thin);
+  padding: var(--space-sm);
+  text-align: left;
+}
+
+table.archive-table th {
+  border-bottom: var(--border-thick);
+}
+
+/* ==========================================================================
+   Blind editor mode — hide decorative content, keep text/structure
+   ========================================================================== */
+
+.blind-editor-mode img,
+.blind-editor-mode .decorative {
+  display: none;
+}
+
+.blind-editor-mode * {
+  background: var(--color-paper) !important;
+  border-color: var(--color-ink) !important;
+}
+
+/* ==========================================================================
+   Preferences
+   ========================================================================== */
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-line: var(--color-ink);
+    --color-muted: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

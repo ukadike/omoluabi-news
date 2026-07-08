@@ -1,0 +1,234 @@
+/* OMOLUABI VISUAL LANGUAGE SYSTEM
+   CSS Custom Properties
+   Version 1.0 | June 8, 2026
+   Usage: :root { ... } or apply to specific scope
+*/
+
+:root {
+  /* COLORS */
+  --color-paper: #efece2;
+  --color-ink: #1a1a1a;
+  --color-line: #d0cdc6;
+  --color-muted: #6f6f6f;
+  --color-soft: #f9f9f7;
+  --color-white: #ffffff;
+
+  /* TYPOGRAPHY - FONTS */
+  --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: Georgia, 'Garamond', serif;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+
+  /* TYPOGRAPHY - SIZES */
+  --text-h1: 2rem;
+  --text-h2: 1.3rem;
+  --text-h3: 1.1rem;
+  --text-h4: 0.95rem;
+  --text-body: 1rem;
+  --text-small: 0.85rem;
+
+  /* TYPOGRAPHY - LINE HEIGHTS */
+  --line-display: 1.3;
+  --line-body: 1.7;
+  --line-small: 1.5;
+  --line-code: 1.6;
+
+  /* TYPOGRAPHY - LETTER SPACING */
+  --letter-tight: -0.01em;
+  --letter-normal: 0;
+  --letter-wide: 0.05em;
+  --letter-wider: 0.1em;
+
+  /* SPACING */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* BORDERS */
+  --border-thin: 1px solid var(--color-line);
+  --border-thick: 2px solid var(--color-ink);
+  --border-radius: 0;
+
+  /* FOCUS */
+  --focus-outline: 2px solid var(--color-ink);
+  --focus-offset: 2px;
+
+  /* TRANSITIONS */
+  --transition: none;
+}
+
+/* UTILITY CLASSES */
+
+/* TEXT */
+.text-h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-h1);
+  font-weight: 700;
+  line-height: var(--line-display);
+  letter-spacing: var(--letter-tight);
+}
+
+.text-h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: var(--line-display);
+  letter-spacing: var(--letter-tight);
+}
+
+.text-h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: var(--line-display);
+  letter-spacing: var(--letter-tight);
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: var(--line-body);
+}
+
+.text-small {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  font-weight: 400;
+  line-height: var(--line-small);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-wide);
+}
+
+.text-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-wide);
+}
+
+/* COLORS */
+.bg-paper {
+  background-color: var(--color-paper);
+}
+
+.bg-soft {
+  background-color: var(--color-soft);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+.text-ink {
+  color: var(--color-ink);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* BORDERS */
+.border-thin {
+  border: var(--border-thin);
+}
+
+.border-thick {
+  border: var(--border-thick);
+}
+
+.border-bottom-thin {
+  border-bottom: var(--border-thin);
+}
+
+.border-bottom-thick {
+  border-bottom: var(--border-thick);
+}
+
+/* SPACING */
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+
+.m-xs { margin: var(--space-xs); }
+.m-sm { margin: var(--space-sm); }
+.m-md { margin: var(--space-md); }
+.m-lg { margin: var(--space-lg); }
+.m-xl { margin: var(--space-xl); }
+
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+
+/* COMPONENTS */
+.btn {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+.card {
+  background-color: var(--color-white);
+  border: var(--border-thin);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.header {
+  border-bottom: var(--border-thick);
+  padding-bottom: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* ACCESSIBILITY */
+*:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+input:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* PRINT */
+@media print {
+  :root {
+    --color-paper: white;
+    --color-soft: white;
+  }
+
+  * {
+    background-color: white !important;
+    color: var(--color-ink) !important;
+    border-color: var(--color-ink) !important;
+  }
+}
+
+/* DARK MODE (if needed, use inverted values) */
+@media (prefers-color-scheme: dark) {
+  /* Keep same colors - system is already dark-friendly */
+}
