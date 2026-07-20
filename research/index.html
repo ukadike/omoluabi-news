@@ -6,6 +6,7 @@
   <meta name="description" content="Research tools demo: evidence confidence chart and evidence map, sample data only.">
   <title>Research &amp; Evidence Map | Omoluabi News</title>
   <link rel="stylesheet" href="/_css/style.css">
+  <script src="/ssl-nav.js" defer></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script type="importmap">
   {
@@ -18,6 +19,25 @@
 </head>
 <body data-baseurl="">
   <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="ssl-header">
+    <div class="ssl-header__row">
+      <a class="ssl-brand" href="https://ukadike.github.io/Small-Systems-Lab/">Small Systems Lab</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="ssl-global-nav">Menu</button>
+    </div>
+    <nav id="ssl-global-nav" class="ssl-global-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/">Small Systems Lab</a></li>
+        <li><a href="https://ukadike.github.io/omoluabi/" aria-current="page">Omoluabi</a></li>
+        <li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+        <li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+        <li><a href="https://ukadike.github.io/Earth-Sensors-Lab/">Earth Sensors Lab</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/schema-cards/">Schema Cards</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/site-map/">Site Map</a></li>
+        <li><a href="https://github.com/ukadike">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -61,6 +81,14 @@
       <a href="https://github.com/ukadike/omoluabi">Omoluabi</a> and
       <a href="https://github.com/ukadike/Small-Systems-Lab">Small Systems Lab</a>
       repositories for governance and architecture.</p>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/site-map/">Site Map</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/accessibility/">Accessibility</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/schema-cards/">Schema Cards</a></li>
+        <li><a href="https://github.com/ukadike">GitHub</a></li>
+      </ul>
+    </nav>
   </footer>
 
   <script type="module">
@@ -102,6 +130,28 @@
     }
 
     init().catch((err) => console.error("Research page failed to load:", err));
+  </script>
+
+  <script type="application/json" data-schema="page.schema.v1">
+{
+  "title": "Omoluabi News \u2014 Research",
+  "project": "Omoluabi",
+  "canonicalUrl": "https://ukadike.github.io/omoluabi-news/research/",
+  "status": "active",
+  "nav": {
+    "globalNav": true,
+    "localNav": true,
+    "siteMapEntry": true
+  },
+  "accessibility": {
+    "skipLink": true,
+    "mainLandmark": true,
+    "keyboardTested": true,
+    "screenReaderLabeling": true,
+    "focusVisible": true
+  },
+  "lastUpdated": "2026-07-20"
+}
   </script>
 </body>
 </html>

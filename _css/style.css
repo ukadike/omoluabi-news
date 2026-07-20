@@ -437,7 +437,83 @@ th {
    ========================================================================== */
 
 @media print {
-  .site-header, .site-footer, .skip-link {
+  .site-header, .site-footer, .skip-link, .ssl-header {
     display: none;
   }
+}
+
+/* === SSL canonical global navigation === */
+.ssl-header {
+  border-bottom: 1px solid var(--line);
+  background-color: var(--paper);
+}
+.ssl-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+}
+.ssl-brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink);
+}
+.ssl-header .nav-toggle {
+  display: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  background-color: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+}
+.ssl-global-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--space-3) var(--space-2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem var(--space-2);
+}
+.ssl-global-nav a {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  padding: 0.2rem 0;
+  display: inline-block;
+  color: var(--ink);
+}
+.ssl-global-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid var(--ink);
+}
+.ssl-global-nav a:focus-visible,
+.ssl-header .nav-toggle:focus-visible,
+.footer-links a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+@media (max-width: 720px) {
+  .ssl-header .nav-toggle { display: inline-block; }
+  .ssl-global-nav[hidden] { display: none; }
+  .ssl-global-nav ul { flex-direction: column; gap: 0.5rem; padding-bottom: var(--space-3); }
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
