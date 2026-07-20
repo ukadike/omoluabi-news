@@ -82,6 +82,7 @@
       <a href="https://github.com/ukadike/omoluabi">Omoluabi</a> and
       <a href="https://github.com/ukadike/Small-Systems-Lab">Small Systems Lab</a>
       repositories for governance and architecture.</p>
+    <p><button type="button" class="button" data-blind-editor-toggle aria-pressed="false">Blind editor mode</button></p>
   </footer>
 
   <script src="/_js/reasoning-engine.js"></script>
@@ -132,7 +133,7 @@
           <blockquote>${ev.text}</blockquote>
           ${
             ev["source-url"]
-              ? `<p><a href="${ev["source-url"]}">Source link</a></p>`
+              ? `<p><a href="${ev["source-url"]}" aria-label="Source link: ${ev.title}">Source link</a></p>`
               : ""
           }
         </div>`

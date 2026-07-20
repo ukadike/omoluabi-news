@@ -25,7 +25,7 @@ function renderNewsFeed(entries, container) {
       <ul class="tag-list" aria-label="Tags">
         ${(item.tags || []).map((tag) => `<li>${tag}</li>`).join("")}
       </ul>
-      <a href="${base}/news/${item.slug}/">Read full story</a>
+      <a href="${base}/news/${item.slug}/" aria-label="Read full story: ${item.title}">Read full story</a>
     </article>`
     )
     .join("");

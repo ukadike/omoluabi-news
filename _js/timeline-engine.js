@@ -33,12 +33,15 @@ class TimelineEngine {
       <li class="timeline-item">
         <span class="timeline-marker" aria-hidden="true"></span>
         <time datetime="${event.date}">${event.date}</time>
-        <h4>${event.title}</h4>
+        <h3>${event.title}</h3>
         <p>${event.description}</p>
       </li>`
       )
       .join("");
-    container.innerHTML = `<ol id="timeline-container" style="list-style: none; padding: 0; margin: 0;">${items}</ol>`;
+    // No id on this <ol> — the caller's container element already carries
+    // id="timeline-container"; duplicating it here would create two
+    // elements sharing one id (WCAG 4.1.1 parsing / broken id references).
+    container.innerHTML = `<ol style="list-style: none; padding: 0; margin: 0;">${items}</ol>`;
   }
 }
 
