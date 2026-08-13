@@ -10,8 +10,10 @@
    `evidenceIds` (array of the ids from step 1), `reasoningLayers` (array
    of layer ids from `_data/reasoning-layers.json` that actually apply —
    don't list a layer you didn't actually reason through), `tags`,
-   `status` (`"published"` for real reporting; `"example"` only for
-   demonstration content, see `docs/EDITING-GUIDELINES.md`).
+   `status` (`"draft"` while writing — never renders publicly;
+   `"published"` for real reporting; `"example"` only for demonstration
+   content; see `docs/EDITING-GUIDELINES.md` and
+   `schemas/news_entry.schema.json` for the full enum).
 3. Copy `news/story-template.html` to `news/<slug>/index.html`. Fill in
    the `<title>`, meta description, JSON-LD block, and set
    `data-news-id` on the `<h1>` to match the id from step 2.

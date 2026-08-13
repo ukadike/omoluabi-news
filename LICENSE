@@ -1,0 +1,15 @@
+Omoluabi News — Licensing decision pending.
+
+No open-source (or other) license has been formally selected for this
+repository yet. Per the Omoluabi MVP v1 build directive: do not invent a
+license before that decision is made.
+
+Until a license is chosen and this file is replaced with its text, all
+rights to the original content of this repository are reserved by its
+author, Adekemi "Kemi" Sijuwade-Ukadike. Third-party dependencies listed
+in package.json and requirements.txt remain under their own respective
+licenses regardless of this repository's own licensing status.
+
+This placeholder will be replaced once a licensing decision is made,
+ahead of any public open-source release. See docs/MVP_TRANSITION.md and
+README.md's "Open Source" note for status.

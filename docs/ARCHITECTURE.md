@@ -21,13 +21,25 @@ omoluabi-news/
 │   ├── reasoning-engine.js     (12-layer reasoning, source ladder, contradictions)
 │   └── timeline-engine.js      (chronological validation + rendering)
 ├── _data/
-│   ├── news.json               (story entries)
-│   ├── evidence.json           (sources, ranked and cross-referenced)
-│   └── reasoning-layers.json   (the 12 layers: name, description, questions)
+│   ├── news.json               (story entries — schemas/news_entry.schema.json)
+│   ├── evidence.json           (sources, ranked and cross-referenced —
+│   │                             schemas/news_evidence_source.schema.json)
+│   └── reasoning-layers.json   (the 18 layers: name, description, questions)
 └── .github/workflows/
     ├── deploy.yml               (GitHub Pages)
-    └── test.yml                 (HTML/CSS/JSON validation)
+    └── test.yml                 (HTML/CSS/JSON/schema validation + editorial invariants)
 ```
+
+## The sandbox / publication boundary
+
+`_data/news.json` entries carry a `status` (`draft`, `sandbox`,
+`published`, `example`, `retracted` — `schemas/news_entry.schema.json`).
+`_js/main.js`'s `renderNewsFeed` filters every entry through a
+`PUBLIC_STATUSES` allow-list before rendering anything, so only
+`published`/`example` content ever reaches a visitor, regardless of what
+else is committed to the repository. `tools/test-editorial-invariants.js`
+asserts this in CI. See
+`docs/decisions/003-sandbox-publication-boundary.md`.
 
 ## Deviations from the original deployment package
 

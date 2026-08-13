@@ -9,8 +9,12 @@ than filling the gap.
 
 ## Example vs. published content
 
-`_data/news.json`'s `status` field distinguishes:
+`_data/news.json`'s `status` field (`schemas/news_entry.schema.json`) is:
 
+- `"draft"` — being written. Never renders on the site, even once
+  committed — see `docs/decisions/003-sandbox-publication-boundary.md`.
+- `"sandbox"` — held for reasoning-engine testing or exploration. Also
+  never renders.
 - `"published"` — real reporting. Every source in its `evidenceIds` must
   be a real, checkable source.
 - `"example"` — demonstration content, for showing how the reasoning
@@ -20,9 +24,13 @@ than filling the gap.
   not license to invent facts, just license to be about something small
   and self-referential (like this repository's own build) instead of a
   real external event.
+- `"retracted"` — was published, no longer stands. Currently removed from
+  the feed like a draft; a distinct correction notice isn't built yet
+  (`docs/KNOWN_LIMITATIONS.md`).
 
-Never ship an `"example"` story that could be mistaken for a real report
-about real people or events.
+Only `published` and `example` ever render publicly
+(`_js/main.js`'s `PUBLIC_STATUSES`). Never ship an `"example"` story that
+could be mistaken for a real report about real people or events.
 
 ## Voice
 
