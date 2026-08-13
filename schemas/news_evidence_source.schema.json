@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Omoluabi News Evidence Source",
+  "description": "One entry in _data/evidence.json's `sources` array — the evidence format the reasoning engine (_js/reasoning-engine.js) consumes directly. Distinct from schemas/evidence.schema.json, which is the research-pipeline Evidence Card format written by tools/*.py into data/processed/ before a human promotes reviewed material here by hand.",
+  "type": "object",
+  "required": ["id", "type", "title", "date", "author", "reliability", "text", "source-url", "contradicts", "supports"],
+  "properties": {
+    "id": { "type": "string" },
+    "type": {
+      "type": "string",
+      "enum": ["firsthand-account", "direct-testimony", "secondhand-account", "written-record", "hearsay"],
+      "description": "Must match a key in _js/reasoning-engine.js's SOURCE_LADDER."
+    },
+    "title": { "type": "string" },
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "author": { "type": "string" },
+    "reliability": { "type": "string" },
+    "text": { "type": "string" },
+    "source-url": { "type": "string" },
+    "contradicts": { "type": "array", "items": { "type": "string" } },
+    "supports": { "type": "array", "items": { "type": "string" } }
+  }
+}

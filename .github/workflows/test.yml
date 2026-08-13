@@ -41,6 +41,9 @@ jobs:
           npm install --no-save ajv
           node tools/validate-schemas.js
 
+      - name: Editorial invariants
+        run: node tools/test-editorial-invariants.js
+
       - name: Python tools compile check
         run: |
           python3 -m py_compile tools/research_scraper.py tools/rss_ingester.py tools/entity_keyword_extractor.py

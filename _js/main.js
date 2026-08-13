@@ -4,10 +4,24 @@
  * timeline-engine.js themselves and drive their own rendering.
  */
 
+// Publication boundary: only these statuses may ever render into the
+// public feed. draft, sandbox, and retracted entries are excluded here,
+// in code, not just by editorial convention — see
+// docs/decisions/003-sandbox-publication-boundary.md.
+const PUBLIC_STATUSES = ["published", "example"];
+
 function renderNewsFeed(entries, container) {
   if (!container) return;
   const base = document.body.dataset.baseurl || "";
-  const sorted = [...entries].sort(
+  const publishable = entries.filter((item) =>
+    PUBLIC_STATUSES.includes(item.status)
+  );
+  if (publishable.length === 0) {
+    container.innerHTML =
+      '<p class="empty-state">No stories are published yet.</p>';
+    return;
+  }
+  const sorted = [...publishable].sort(
     (a, b) => new Date(b.date) - new Date(a.date)
   );
   container.innerHTML = sorted
