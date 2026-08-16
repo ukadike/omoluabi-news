@@ -15,8 +15,9 @@ python3 -m http.server 8000
 No build step, no framework, no server dependency — every page fetches its data
 from `_data/*.json` at runtime. See `docs/ARCHITECTURE.md`.
 
-The editorial engine (the newsroom's back office) is at
-`http://localhost:8000/engine/` — see "Editorial Engine" below.
+The retired browser-prototype engine (the newsroom's first back office) still
+runs at `http://localhost:8000/archive/engine-browser-prototype/` — see
+"Web Engine" below for the current direction.
 
 ## What this is meant to be
 
@@ -41,35 +42,29 @@ governance docs still live in the [Omoluabi repo](https://github.com/ukadike/omo
 (`governance/`, `architecture/`, `cards/`, `schemas/`) and remain the source of
 truth for anything not specific to this newsroom implementation.
 
-## Editorial Engine (`engine/`)
+## Web Engine (`engine/`)
 
 The web engine — Omoluabi's governed review and authoring interface — lives in
 this repository, per Kemi's direction (2026-07-08) that Omoluabi-News is where
-the web engine lives. It was moved here from the Omoluabi repo's
-`web-engine/app/` (which now points back here); the planning documentation it
-implements (`web-engine/*.md`, `architecture/governance-pipeline.md`) remains
-in the [Omoluabi repo](https://github.com/ukadike/omoluabi) as the source of
-truth.
+the web engine lives.
 
-What it does:
+**Current state (2026-08-16):** Kemi designated a new web engine plan. Its
+specification documents are not yet physically present in this repository and
+are indexed in `engine/README.md` as `AWAITING FRAGMENT` only — no contents
+described or inferred until the fragments land.
 
-- **New observation** (`engine/#/new`) — create a story by hand, no field
-  device required (`source.origin_type: "web-form"`). **Every story needs a
-  headline**: the form requires a `title`, stored on the observation record.
-- **Review pipeline** — Source → Consent → Risk → Accessibility → AI assist →
-  Human review → Publication status, gated in order; no screen may skip ahead.
-- **News preview** (`engine/#/news`) — reader view of records with an explicit
-  human `public` publication decision only.
-- **Archive & search** — JSON export for non-private decided records.
+**Previous engine:** the first running engine — a browser-only, local-first
+(IndexedDB) human review interface over the governance pipeline, moved here
+from the Omoluabi repo's `web-engine/app/` — is retired and preserved intact
+at `archive/engine-browser-prototype/` (see its `ARCHIVED.md`). It still runs
+from that directory. The planning documentation it implemented
+(`web-engine/*.md`, `architecture/governance-pipeline.md`) remains in the
+[Omoluabi repo](https://github.com/ukadike/omoluabi).
 
-Engine data lives in the browser's IndexedDB (prototype decision — see the
-Omoluabi repo's `web-engine/local-first-plan.md`); the public site's stories
-live in `_data/news.json`. Bridging the two (exporting a published engine
-record as a `news.json` entry) is a planned follow-up, not yet built — today
-an editor copies the story across by hand.
-
-`engine/css/variables.css` is a verbatim copy of the shared Small Systems Lab
-visual-token system (locked; do not redesign from this repo).
+Whatever the stack, the engine never bypasses the governance pipeline
+(Observation → Consent → Source → Risk → Accessibility → Human Review →
+Publication Status → Archive), AI assists but does not decide publication
+status, and the shared Small Systems Lab visual-token system stays locked.
 
 ## Related repos
 
