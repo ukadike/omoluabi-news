@@ -48,10 +48,14 @@ The web engine — Omoluabi's governed review and authoring interface — lives 
 this repository, per Kemi's direction (2026-07-08) that Omoluabi-News is where
 the web engine lives.
 
-**Current state (2026-08-16):** Kemi designated a new web engine plan. Its
-specification documents are not yet physically present in this repository and
-are indexed in `engine/README.md` as `AWAITING FRAGMENT` only — no contents
-described or inferred until the fragments land.
+**Current state (2026-08-18):** Kemi designated a new web engine plan and
+shared the planning conversation behind it. That conversation is preserved
+at `engine/sources/planning-conversation-2026-08.md`, and draft spec
+documents reconstructed from it — with per-section provenance markers —
+live in `engine/docs/` and `engine/tasks/`. The two original files Kemi
+uploaded to that conversation remain `AWAITING FRAGMENT`; see
+`engine/README.md` for the index and open questions (including a
+muted-token conflict awaiting Kemi's ruling). No app code exists yet.
 
 **Previous engine:** the first running engine — a browser-only, local-first
 (IndexedDB) human review interface over the governance pipeline, moved here
