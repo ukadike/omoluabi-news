@@ -35,6 +35,54 @@
       "source-url": "https://github.com/ukadike/omoluabi-news",
       "contradicts": [],
       "supports": ["news-001"]
+    },
+    {
+      "id": "ev-004",
+      "type": "written-record",
+      "title": "Phylogenomics and museomics reveal five distinct species of tiger cats in South America",
+      "date": "2026-09-17",
+      "author": "Lescroart et al. — Current Biology",
+      "reliability": "peer-reviewed primary research",
+      "text": "The primary taxonomic study uses phylogenomics and museomics to resolve the South American tiger-cat complex, describes Leopardus tilcayo as a distinct species from the Bolivian Yungas, and provides the scientific basis for the revised taxonomy.",
+      "source-url": "https://doi.org/10.1016/j.cub.2026.08.059",
+      "contradicts": [],
+      "supports": ["news-002"]
+    },
+    {
+      "id": "ev-005",
+      "type": "written-record",
+      "title": "New cat species identified in Bolivia, first in over a century",
+      "date": "2026-09-17",
+      "author": "Reuters",
+      "reliability": "independent contemporary reporting",
+      "text": "Reuters reports the species' small body size, roughly 1.4-million-year divergence, limited evidence from two living individuals plus camera traps, preliminary nocturnal and rodent-diet observations, and conservation pressures in the Yungas.",
+      "source-url": "https://www.reuters.com/business/environment/new-cat-species-identified-bolivia-first-over-century-2026-09-17/",
+      "contradicts": [],
+      "supports": ["news-002"]
+    },
+    {
+      "id": "ev-006",
+      "type": "written-record",
+      "title": "Meet the First New Cat Species Discovered in 100 Years",
+      "date": "2026-09-17",
+      "author": "Jason Bittel — National Geographic",
+      "reliability": "reported field and researcher interviews",
+      "text": "National Geographic documents the 2016 sanctuary encounter, Paola Nogales-Ascarrunz's role, the animal's approximate 18-inch body length and 3-pound weight, the Senda Verde refuge, and the fact that local communities already used the name tilcayo.",
+      "source-url": "https://www.nationalgeographic.com/animals/article/meet-the-first-new-cat-species-discovered-in-100-years",
+      "contradicts": [],
+      "supports": ["news-002"]
+    },
+    {
+      "id": "ev-007",
+      "type": "written-record",
+      "title": "Scientists name a new cat species for the first time in over a century",
+      "date": "2026-09-17",
+      "author": "Olivia Ferrari — Live Science",
+      "reliability": "science reporting citing the primary paper and researchers",
+      "text": "Live Science links the Current Biology paper and reports that recognizing separate tiger-cat lineages could change future IUCN risk assessments and conservation planning.",
+      "source-url": "https://www.livescience.com/animals/cats/scientists-name-a-new-cat-species-for-the-first-time-in-over-a-century",
+      "contradicts": [],
+      "supports": ["news-002"]
     }
   ],
   "contradictions": []
