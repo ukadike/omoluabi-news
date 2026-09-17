@@ -13,6 +13,24 @@
       "reasoningLayers": [1, 2, 3, 7, 8],
       "tags": ["example", "meta", "reasoning-engine"],
       "status": "example"
+    },
+    {
+      "id": "news-002",
+      "slug": "leopardus-tilcayo",
+      "title": "Leopardus tilcayo: The Wild Cat Hidden in Bolivia's Cloud Forest",
+      "subtitle": "A newly described tiger cat from Bolivia's Yungas shows how genomics, museum collections, field observation and local knowledge can redraw the map of biodiversity.",
+      "date": "2026-09-17",
+      "author": "Omoluabi News — Research POC",
+      "excerpt": "A proof-of-concept evidence chain tracing a newly described Bolivian tiger cat from local knowledge and sanctuary observation through genomics, taxonomy and unresolved conservation questions.",
+      "content": "<p>Researchers formally described <em>Leopardus tilcayo</em> in 2026 after genomic analysis distinguished the Bolivian Yungas lineage from related South American tiger cats. Omoluabi follows the evidence chain from local knowledge and field observation through museum material, genome comparison, taxonomic revision and conservation reassessment.</p>",
+      "evidenceIds": ["ev-004", "ev-005", "ev-006", "ev-007"],
+      "reasoningLayers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 17, 18],
+      "tags": ["poc", "biodiversity", "Bolivia", "Yungas", "genomics", "conservation"],
+      "status": "poc",
+      "allowsRevision": true,
+      "expectedVoices": ["Bolivian Yungas community knowledge holders", "local conservation workers", "future IUCN assessment"],
+      "erasedContexts": ["The animal was locally known before formal scientific description"],
+      "primaryTimeline": "Local knowledge predates the 2016 sanctuary observation and the 2026 taxonomic publication"
     }
   ]
 }
