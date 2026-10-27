@@ -1,9 +1,8 @@
 # Omoluabi-News
 
-An accessible, static editorial reasoning platform — the first working build of
-this repository, per the "Ready for Claude Code sprint" deployment package
-delivered by Kemi (see `docs/` for the full architecture, reasoning, accessibility,
-deployment, contributing, and editing-standards docs).
+An accessible, static editorial reasoning platform. This repository contains a
+working build; see `docs/` for architecture, reasoning, accessibility, deployment,
+contributing, and editing guidance.
 
 ## Quick start
 
