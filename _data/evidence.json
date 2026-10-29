@@ -167,6 +167,90 @@
       "supports": [
         "news-003"
       ]
+    },
+    {
+      "id": "ev-013",
+      "type": "written-record",
+      "title": "Attacks on Ukraine’s Electric Grid: Insights for U.S. Infrastructure Security and Resilience",
+      "date": "2024-05-17",
+      "author": "Congressional Research Service",
+      "reliability": "Congressional research analysis",
+      "text": "CRS analyzes Russia’s attacks on Ukrainian electricity infrastructure, physical and cyber threats, grid resilience, foreign aid and policy lessons. It is a U.S. Congress research report, not a legal finding or incident database.",
+      "source-url": "https://www.congress.gov/crs_external_products/R/PDF/R48067/R48067.12.pdf",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-014",
+      "type": "written-record",
+      "title": "Conflict Observatory briefing: bombardment of Ukraine’s power generation and transmission infrastructure",
+      "date": "2024-03-04",
+      "author": "U.S. Department of State Foreign Press Center briefing with Yale Humanitarian Research Lab researchers",
+      "reliability": "Government-hosted briefing presenting external researchers’ findings",
+      "text": "Yale researchers described their open-source methodology for identifying, geolocating and verifying damage from October 2022 to April 2023. They distinguished 66 high-confidence verified incidents from 157 identified but not confirmed to that standard, and discussed limits including sensitive locations, disinformation and rapid repairs. This is a State Department-hosted briefing, not a State Department-authored forensic report.",
+      "source-url": "https://2021-2025.state.gov/briefings-foreign-press-centers/russian-attacks-targeting-ukraine-energy-infrastructure/",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-015",
+      "type": "written-record",
+      "title": "Ukraine: State Should Take Additional Actions to Improve Planning for Any Future Recovery Assistance",
+      "date": "2025-09-04",
+      "author": "U.S. Government Accountability Office",
+      "reliability": "Government audit and oversight report",
+      "text": "GAO reviews U.S. planning for Ukraine recovery assistance. It reports Ukrenergo officials’ estimate that Ukraine lost almost half its energy grid to the war and ordinary wear, and cites more than $20 billion in energy and extractives damage as of December 2024. These are attributed estimates within a recovery-planning review, not GAO’s own incident count.",
+      "source-url": "https://files.gao.gov/reports/GAO-25-107043/index.html",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-016",
+      "type": "written-record",
+      "title": "Country policy and information note: humanitarian situation, Ukraine, October 2026",
+      "date": "2026-10-22",
+      "author": "UK Home Office",
+      "reliability": "Government country information compilation",
+      "text": "The updated UK note synthesizes information about humanitarian conditions, energy outages, infrastructure resilience and impacts on groups with specific needs. It cites other sources, including UN reporting; treat it as a government compilation and follow citations to the underlying reports for primary evidence.",
+      "source-url": "https://www.gov.uk/government/publications/ukraine-country-policy-and-information-notes/country-policy-and-information-note-humanitarian-situation-ukraine-october-2026-accessible",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-017",
+      "type": "written-record",
+      "title": "Treasury Sanctions Major Russian Oil Companies",
+      "date": "2025-10-22",
+      "author": "U.S. Department of the Treasury, Office of Foreign Assets Control",
+      "reliability": "Official sanctions action and stated rationale",
+      "text": "Treasury announced sanctions on Rosneft and Lukoil and described the intended effect as increasing pressure on Russia’s energy sector and limiting war-related revenue. This establishes what the U.S. government did and said; it does not independently measure the sanctions’ eventual effects.",
+      "source-url": "https://home.treasury.gov/news/press-releases/sb0290",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-018",
+      "type": "written-record",
+      "title": "Official Ukrainian statement: reported energy-sector attack count",
+      "date": "2026-10-19",
+      "author": "Cabinet of Ministers of Ukraine",
+      "reliability": "Wartime government claim; independent verification needed",
+      "text": "The Ukrainian government stated that 2,147 attacks had targeted the energy sector since 16 July 2026. The statement does not define the counting method in the cited passage. Preserve this as an attributed official claim until the event list and methodology can be checked independently.",
+      "source-url": "https://www.kmu.gov.ua/en/news/serhii-koretskyi-vid-pochatku-roboty-onovlenoho-uriadu-rosiia-atakuvala-enerhetyku-2147-raziv",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
     }
   ],
   "contradictions": []
