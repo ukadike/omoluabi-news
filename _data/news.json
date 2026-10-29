@@ -87,14 +87,20 @@
       "subtitle": "A developing Omoluabi investigation into energy as civilian survival system, war infrastructure and a contested public story.",
       "date": "2026-10-29",
       "author": "Omoluabi News — Developing Investigation",
-      "excerpt": "An opening distortion map traces how energy events become public claims, and how UN monitoring, energy data, nuclear-safety records and local testimony can keep the evidence in view.",
+      "excerpt": "An opening distortion map traces how energy events become public claims. Government and intergovernmental records add evidence on grid attacks, civilian impacts, resilience, sanctions, and the limits of official tallies.",
       "content": "<p>Energy in Russia’s war on Ukraine is at once a survival system, a military and economic resource, and a subject of competing claims. This developing investigation follows those threads while keeping each claim tied to its evidence and limits.</p>",
       "evidenceIds": [
         "ev-008",
         "ev-009",
         "ev-010",
         "ev-011",
-        "ev-012"
+        "ev-012",
+        "ev-013",
+        "ev-014",
+        "ev-015",
+        "ev-016",
+        "ev-017",
+        "ev-018"
       ],
       "reasoningLayers": [
         1,
