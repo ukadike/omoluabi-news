@@ -9,9 +9,23 @@
       "author": "Omoluabi News — Editorial",
       "excerpt": "This is a demonstration story, not a field report. It walks the twelve reasoning layers through the record of how this site itself was built.",
       "content": "<p>This story is an example, not a report on a real-world event. It exists so a reader can see the reasoning engine work on something fully verifiable: the history of this repository.</p><p>On 2 July 2026, a repository restoration pass audited this repository and found it effectively empty — the only tracked file was <code>.gitattributes</code>. That audit is <a href=\"https://github.com/ukadike/omoluabi-news/blob/main/docs/REPO_AUDIT.md\">still in the repository</a>. On 7 July 2026, this pass added the visual system, the reasoning and timeline engines, the data schema, this story, and the GitHub Actions deployment workflow described below.</p><p>Every claim above can be checked against the repository's own commit history and audit file — nothing here is asserted without a source a reader can open themselves.</p>",
-      "evidenceIds": ["ev-001", "ev-002", "ev-003"],
-      "reasoningLayers": [1, 2, 3, 7, 8],
-      "tags": ["example", "meta", "reasoning-engine"],
+      "evidenceIds": [
+        "ev-001",
+        "ev-002",
+        "ev-003"
+      ],
+      "reasoningLayers": [
+        1,
+        2,
+        3,
+        7,
+        8
+      ],
+      "tags": [
+        "example",
+        "meta",
+        "reasoning-engine"
+      ],
       "status": "example"
     },
     {
@@ -23,14 +37,106 @@
       "author": "Omoluabi News — Research POC",
       "excerpt": "Local communities already knew the tilcayo. Genomics made the lineage formally visible to science. This POC traces the authority shift from local knowledge to taxonomy, media and conservation.",
       "content": "<p>Local communities in Bolivia's Yungas already used the name <em>tilcayo</em>. In 2026, genomic evidence supported its formal description as <em>Leopardus tilcayo</em>. Omoluabi separates being known, being observed and being institutionally classified, then follows what that shift changes for conservation and the historical record.</p>",
-      "evidenceIds": ["ev-004", "ev-005", "ev-006", "ev-007"],
-      "reasoningLayers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 17, 18],
-      "tags": ["poc", "knowledge-authority", "biodiversity", "Bolivia", "Yungas", "genomics", "conservation"],
+      "evidenceIds": [
+        "ev-004",
+        "ev-005",
+        "ev-006",
+        "ev-007"
+      ],
+      "reasoningLayers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        17,
+        18
+      ],
+      "tags": [
+        "poc",
+        "knowledge-authority",
+        "biodiversity",
+        "Bolivia",
+        "Yungas",
+        "genomics",
+        "conservation"
+      ],
       "status": "poc",
       "allowsRevision": true,
-      "expectedVoices": ["Bolivian Yungas community knowledge holders", "local conservation workers", "future IUCN assessment"],
-      "erasedContexts": ["The animal was locally known and named before formal scientific description"],
+      "expectedVoices": [
+        "Bolivian Yungas community knowledge holders",
+        "local conservation workers",
+        "future IUCN assessment"
+      ],
+      "erasedContexts": [
+        "The animal was locally known and named before formal scientific description"
+      ],
       "primaryTimeline": "Local knowledge predates the 2016 sanctuary observation and the 2026 taxonomic publication"
+    },
+    {
+      "id": "news-003",
+      "slug": "energy-distortion-map",
+      "title": "The Energy War: Power, Fuel and the Story of the Strike",
+      "subtitle": "A developing Omoluabi investigation into energy as civilian survival system, war infrastructure and a contested public story.",
+      "date": "2026-10-29",
+      "author": "Omoluabi News — Developing Investigation",
+      "excerpt": "An opening distortion map traces how energy events become public claims, and how UN monitoring, energy data, nuclear-safety records and local testimony can keep the evidence in view.",
+      "content": "<p>Energy in Russia’s war on Ukraine is at once a survival system, a military and economic resource, and a subject of competing claims. This developing investigation follows those threads while keeping each claim tied to its evidence and limits.</p>",
+      "evidenceIds": [
+        "ev-008",
+        "ev-009",
+        "ev-010",
+        "ev-011",
+        "ev-012"
+      ],
+      "reasoningLayers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        15,
+        17,
+        18
+      ],
+      "tags": [
+        "developing",
+        "energy",
+        "Russia",
+        "Ukraine",
+        "civilian-infrastructure",
+        "nuclear-safety",
+        "sanctions",
+        "source-ladder"
+      ],
+      "status": "developing",
+      "allowsRevision": true,
+      "expectedVoices": [
+        "Ukrainian residents affected by outages",
+        "People with disabilities and others who rely on power-dependent services",
+        "Energy workers and repair crews",
+        "Independent energy and nuclear-safety experts",
+        "Civilians affected by energy disruptions in Russia, where verifiable access is possible"
+      ],
+      "erasedContexts": [
+        "The daily consequences of outages for people who depend on electricity, heating, water, mobility aids, or medical services",
+        "The distinction between infrastructure damage and independently measured military effects",
+        "The limits on independent assessment of Ukrainian strikes inside Russia"
+      ],
+      "primaryTimeline": "A developing chronology of attacks, outages, repairs, fuel and policy changes; incident dates and effects will be entered only when supported by evidence."
     }
   ]
 }
