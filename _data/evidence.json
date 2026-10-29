@@ -10,7 +10,9 @@
       "text": "Effectively empty. Before this pass, the only tracked file was .gitattributes.",
       "source-url": "https://github.com/ukadike/omoluabi-news/blob/main/docs/REPO_AUDIT.md",
       "contradicts": [],
-      "supports": ["news-001"]
+      "supports": [
+        "news-001"
+      ]
     },
     {
       "id": "ev-002",
@@ -22,7 +24,9 @@
       "text": "The repository's first commit created the scaffold this build later extended; no application code existed until this pass.",
       "source-url": "https://github.com/ukadike/omoluabi-news/commit/12156ed",
       "contradicts": [],
-      "supports": ["news-001"]
+      "supports": [
+        "news-001"
+      ]
     },
     {
       "id": "ev-003",
@@ -34,7 +38,9 @@
       "text": "This pass added the locked visual system, the reasoning and timeline engines, the data schema, this story, and the GitHub Actions deployment workflow.",
       "source-url": "https://github.com/ukadike/omoluabi-news",
       "contradicts": [],
-      "supports": ["news-001"]
+      "supports": [
+        "news-001"
+      ]
     },
     {
       "id": "ev-004",
@@ -46,7 +52,9 @@
       "text": "The primary taxonomic study uses phylogenomics and museomics to resolve the South American tiger-cat complex, describes Leopardus tilcayo as a distinct species from the Bolivian Yungas, and provides the scientific basis for the revised taxonomy.",
       "source-url": "https://doi.org/10.1016/j.cub.2026.08.059",
       "contradicts": [],
-      "supports": ["news-002"]
+      "supports": [
+        "news-002"
+      ]
     },
     {
       "id": "ev-005",
@@ -58,7 +66,9 @@
       "text": "Reuters reports the species' small body size, roughly 1.4-million-year divergence, limited evidence from two living individuals plus camera traps, preliminary nocturnal and rodent-diet observations, and conservation pressures in the Yungas.",
       "source-url": "https://www.reuters.com/business/environment/new-cat-species-identified-bolivia-first-over-century-2026-09-17/",
       "contradicts": [],
-      "supports": ["news-002"]
+      "supports": [
+        "news-002"
+      ]
     },
     {
       "id": "ev-006",
@@ -70,7 +80,9 @@
       "text": "National Geographic documents the 2016 sanctuary encounter, Paola Nogales-Ascarrunz's role, the animal's approximate 18-inch body length and 3-pound weight, the Senda Verde refuge, and the fact that local communities already used the name tilcayo.",
       "source-url": "https://www.nationalgeographic.com/animals/article/meet-the-first-new-cat-species-discovered-in-100-years",
       "contradicts": [],
-      "supports": ["news-002"]
+      "supports": [
+        "news-002"
+      ]
     },
     {
       "id": "ev-007",
@@ -82,7 +94,79 @@
       "text": "Live Science links the Current Biology paper and reports that recognizing separate tiger-cat lineages could change future IUCN risk assessments and conservation planning.",
       "source-url": "https://www.livescience.com/animals/cats/scientists-name-a-new-cat-species-for-the-first-time-in-over-a-century",
       "contradicts": [],
-      "supports": ["news-002"]
+      "supports": [
+        "news-002"
+      ]
+    },
+    {
+      "id": "ev-008",
+      "type": "written-record",
+      "title": "UN Commission of Inquiry: attacks on Ukraine’s energy infrastructure",
+      "date": "2026-10-26",
+      "author": "Independent International Commission of Inquiry on Ukraine",
+      "reliability": "UN Commission of Inquiry findings",
+      "text": "The Commission concluded that Russian attacks on Ukrainian energy infrastructure included war crimes and crimes against humanity. It also examined Ukrainian attacks on energy infrastructure in Russia and occupied areas, but could not investigate their impact further because the Russian Federation did not provide access or respond to information requests.",
+      "source-url": "https://ukraine.un.org/en/325200-russian-authorities-committed-crimes-against-humanity-through-attacks-ukraine%E2%80%99s-energy",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-009",
+      "type": "written-record",
+      "title": "Attacks against Ukraine’s energy infrastructure, 1 December 2025–31 May 2026",
+      "date": "2026-06-29",
+      "author": "UN Human Rights Monitoring Mission in Ukraine",
+      "reliability": "UN human-rights monitoring report",
+      "text": "The report documents at least 423 attacks on electricity generation, transmission and distribution facilities and at least 74 strikes on heating infrastructure from October 2025 through March 2026. It describes outages affecting civilians and disproportionate harm to older people and persons with disabilities.",
+      "source-url": "https://ukraine.ohchr.org/en/Attacks-against-Ukraine-s-energy-infrastructure-and-update-on-the-human-rights-situation-in-Ukraine-1-December-2025-31-May-2026",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-010",
+      "type": "written-record",
+      "title": "Russian refining sector struggles amid intensifying Ukrainian attacks",
+      "date": "2026-09-17",
+      "author": "International Energy Agency",
+      "reliability": "IEA energy-market analysis",
+      "text": "The IEA reports intensified Ukrainian attacks on Russian refineries, reduced refinery throughput, and domestic fuel pressure. These are indicators of the refining and fuel system; they do not by themselves quantify an effect on military capacity.",
+      "source-url": "https://www.iea.org/commentaries/russian-refining-sector-struggles-amid-intensifying-ukrainian-attacks",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-011",
+      "type": "written-record",
+      "title": "Ukraine: Current status of nuclear power installations",
+      "date": "2026-09-25",
+      "author": "OECD Nuclear Energy Agency",
+      "reliability": "Intergovernmental nuclear-safety status record",
+      "text": "The NEA records recurring loss of off-site power at Zaporizhzhia Nuclear Power Plant and technical updates on emergency diesel generator readiness and fuel supplies. This is a nuclear-safety and infrastructure record, distinct from a claim about deliberate targeting.",
+      "source-url": "https://oecd-nea.org/jcms/pl_66130/ukraine-current-status-of-nuclear-power-installations",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
+    },
+    {
+      "id": "ev-012",
+      "type": "written-record",
+      "title": "REPowerEU: phase out of Russian energy imports",
+      "date": "2025-05-06",
+      "author": "European Commission",
+      "reliability": "Official EU energy policy roadmap",
+      "text": "The Commission’s roadmap describes the EU’s plan to gradually phase out Russian oil, gas and nuclear energy imports and provides context for energy dependence and policy response. It documents stated policy, not an independent estimate of sanctions’ military effect.",
+      "source-url": "https://energy.ec.europa.eu/strategy/repowereu-phase-out-russian-energy-imports_en",
+      "contradicts": [],
+      "supports": [
+        "news-003"
+      ]
     }
   ],
   "contradictions": []
