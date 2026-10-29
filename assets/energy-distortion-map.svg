@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 940" role="img" aria-labelledby="title desc">
+<title id="title">Omoluabi energy distortion map</title>
+<desc id="desc">A conceptual diagram. Energy events lead to first accounts, which pass through framing filters and become public claims. UN monitoring, energy data, nuclear safety records, and local testimony cross-check claims before they enter an Omoluabi record marked verified, attributed, disputed, or unknown.</desc>
+<style>
+  text{font-family:Arial,Helvetica,sans-serif;fill:#1a1a1a}
+  .kicker{font-size:18px;font-weight:700;letter-spacing:1.5px}
+  .label{font-size:22px;font-weight:700}
+  .body{font-size:18px}
+  .small{font-size:16px}
+  .box{fill:#efece2;stroke:#1a1a1a;stroke-width:2}
+  .thin{stroke:#55524b;stroke-width:1.5;fill:none}
+  .arrow{stroke:#1a1a1a;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#1a1a1a"/></marker></defs>
+<rect width="1200" height="940" fill="#efece2"/>
+<text x="48" y="55" class="kicker">OMOLUABI · INVESTIGATION MAP</text>
+<text x="48" y="96" class="label">ENERGY IN RUSSIA’S WAR ON UKRAINE</text>
+<text x="48" y="129" class="small">Conceptual map of claims and evidence — not a geographic map or a count of strikes.</text>
+<line x1="48" y1="153" x2="1152" y2="153" class="thin"/>
+
+<rect x="48" y="180" width="532" height="132" class="box"/>
+<text x="72" y="216" class="kicker">ENERGY EVENT A</text>
+<text x="72" y="253" class="label">Russia → Ukraine</text>
+<text x="72" y="282" class="body">Power generation · transmission · heating</text>
+
+<rect x="620" y="180" width="532" height="132" class="box"/>
+<text x="644" y="216" class="kicker">ENERGY EVENT B</text>
+<text x="644" y="253" class="label">Ukraine → Russia</text>
+<text x="644" y="282" class="body">Oil refineries · fuel infrastructure</text>
+
+<path d="M314 312 V350 H600" class="arrow"/>
+<path d="M886 312 V350 H600" class="arrow"/>
+<rect x="320" y="365" width="560" height="94" class="box"/>
+<text x="352" y="402" class="kicker">01 · FIRST ACCOUNTS</text>
+<text x="352" y="434" class="body">Officials · operators · local witnesses</text>
+
+<path d="M600 459 V495" class="arrow"/>
+<rect x="110" y="507" width="980" height="146" class="box"/>
+<text x="142" y="545" class="kicker">02 · DISTORTION FILTERS</text>
+<line x1="435" y1="563" x2="435" y2="634" class="thin"/>
+<line x1="755" y1="563" x2="755" y2="634" class="thin"/>
+<text x="142" y="585" class="label">Selection</text>
+<text x="142" y="616" class="small">Which target or harm is named?</text>
+<text x="463" y="585" class="label">Inference</text>
+<text x="463" y="616" class="small">Damage ≠ proven military effect</text>
+<text x="783" y="585" class="label">Flattening</text>
+<text x="783" y="616" class="small">Different evidence or legal findings?</text>
+
+<path d="M600 653 V689" class="arrow"/>
+<rect x="320" y="700" width="560" height="93" class="box"/>
+<text x="352" y="738" class="kicker">03 · PUBLIC CLAIM</text>
+<text x="352" y="770" class="body">“Military necessity” · “retaliation” · “crippled”</text>
+
+<rect x="48" y="690" width="230" height="210" class="box"/>
+<text x="72" y="728" class="kicker">CROSS-CHECKS</text>
+<text x="72" y="765" class="body">UN monitoring</text>
+<text x="72" y="796" class="body">IEA energy data</text>
+<text x="72" y="827" class="body">Nuclear safety records</text>
+<text x="72" y="858" class="body">Local testimony</text>
+<path d="M278 795 H306 V840 H320" class="arrow"/>
+
+<path d="M600 793 V823" class="arrow"/>
+<rect x="320" y="832" width="832" height="68" class="box"/>
+<text x="352" y="861" class="kicker">04 · OMOLUABI CLAIM LEDGER</text>
+<text x="760" y="861" class="small">VERIFIED · ATTRIBUTED · DISPUTED · UNKNOWN</text>
+<text x="48" y="927" class="small">Separate the event, its explanation, and the independently established effect.</text>
+</svg>
